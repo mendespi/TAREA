@@ -65,6 +65,6 @@ trait Favoritable
      */
     public function isFavoritedBy(User $user)
     {
-        return !! $this->favorited()->where('user_id', $user->id)->count();
+        return (bool) $this->favorited()->where('user_id', $user->id)->count();
     }
 }
